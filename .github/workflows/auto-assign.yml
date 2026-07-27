@@ -18,5 +18,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           reviewers: |
             Tbusk
-          assignees: ''
+          assignees: |
+            Tbusk
           skipKeywords: wip, draft
