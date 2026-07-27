@@ -12,9 +12,11 @@ jobs:
   check:
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: thehanimo/pr-title-checker@v1.4.3
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
           configuration_path: .github/pr-title-checker-config.json
