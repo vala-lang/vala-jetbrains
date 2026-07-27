@@ -11,8 +11,12 @@ jobs:
     name: Add issue to project
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      repository-projects: write
     steps:
       - uses: actions/add-to-project@v2.0.0
         with:
-          project-url: https://github.com/orgs/vala-lang/projects/4
-          github-token: ${{ secrets.GH_ACTIONS_KEY }}
+          project-url: https://github.com/orgs/vala-lang/projects/6
+          github-token: ${{ secrets.GITHUB_TOKEN }}

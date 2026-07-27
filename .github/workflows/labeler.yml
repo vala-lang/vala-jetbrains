@@ -1,6 +1,6 @@
 name: "Pull Request Labeler"
 on:
-  - pull_request_target
+  - pull_request
 
 jobs:
   labeler:
@@ -10,7 +10,7 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/labeler@v6
+      - uses: actions/labeler@v7
         with:
-          repo-token: '${{ secrets.GH_ACTIONS_KEY }}'
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
           sync-labels: true

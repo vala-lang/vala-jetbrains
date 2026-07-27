@@ -9,11 +9,15 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: wow-actions/auto-assign@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           reviewers: |
             Tbusk
-          assignees: ''
+          assignees: |
+            Tbusk
           skipKeywords: wip, draft
