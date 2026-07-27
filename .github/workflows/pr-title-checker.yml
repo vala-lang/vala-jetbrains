@@ -12,12 +12,7 @@ jobs:
   check:
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: read
     steps:
-      - uses: thehanimo/pr-title-checker@v1.4.3
+      - uses: Slashgear/action-check-pr-title@v4.3.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pass_on_octokit_error: false
-          remote_configuration_url: "https://raw.githubusercontent.com/vala-lang/vala-jetbrains/refs/heads/main/.github/pr-title-checker-config.json"
+          regexp: '^(patch|feat|change|docs|change|test|chore)(\([a-zA-Z0-9 ._-]+\))?: .+$'
