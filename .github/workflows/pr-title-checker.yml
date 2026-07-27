@@ -20,3 +20,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
+          remote_configuration_url: "https://raw.githubusercontent.com/vala-lang/vala-jetbrains/refs/heads/main/.github/pr-title-checker-config.json"
