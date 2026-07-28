@@ -13,6 +13,6 @@ jobs:
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      - uses: Slashgear/action-check-pr-title@v4.3.0
+      - uses: Slashgear/action-check-pr-title@v5.0.1
         with:
           regexp: '^(patch|feat|change|docs|change|test|chore)(\([a-zA-Z0-9 ._-]+\))?: .+$'
